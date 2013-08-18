@@ -1,6 +1,7 @@
 'use strict';
 
-app.controller('RegistrationController', function($scope, $window, AuthenticationService) {
+angular.module('bridgeApp')
+.controller('RegistrationController', function($scope, $window, AuthenticationService) {
   $scope.user = { fname: "", lname: "", email:"", company:"", accountType: "startup"},
   $scope.register = function() {
     if ($scope.registerForm.$valid) {

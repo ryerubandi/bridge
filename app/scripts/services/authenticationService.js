@@ -1,6 +1,6 @@
 'use strict';
 
-app
+angular.module('bridgeApp')
 .factory("AuthenticationService", function($http, $location) {
   return {
     login: function(credentials) {

@@ -1,6 +1,7 @@
 'use strict';
 
-app.controller('LoginController', function($scope, $window, AuthenticationService) {
+angular.module('bridgeApp')
+.controller('LoginController', function($scope, $window, AuthenticationService) {
   $scope.credentials = { email: "", password: "" },
   $scope.login = function() {
     if ($scope.loginForm.$valid) {
