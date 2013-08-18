@@ -1,0 +1,144 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css({.tmp,app}) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>         
+</head>
+  <body ng-app="bridgeApp">
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">Bridge</a>
+          <div class="nav-collapse collapse">
+            <form name="loginForm" class="navbar-form pull-right" ng-submit="login()" ng-controller="LoginController">
+              <input class="span2" type="email" ng-model="credentials.email" placeholder="Email" required>
+              <input class="span2" type="password" ng-model="credentials.password" placeholder="Password" required>
+              <!--button type="submit" class="btn">Sign in</button-->
+              <button type="submit" class="btn" ng-disabled="!loginForm.$valid">Sign in</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>      
+    <div class="container-fluid">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit clearfix">
+          <iframe class="pull-left" width="560" height="315" src="//www.youtube.com/embed/2b3qZvpd6H0" frameborder="0" allowfullscreen></iframe>
+          <div class="span4 well pull-right">
+            <form name="registerForm" class="form-signup clearfix" ng-submit="register()" ng-controller="RegistrationController">
+              <h2 class="form-signup-heading">Register</h2>
+              <input type="text" class="input-block-level" ng-model="user.fname" placeholder="First name" required>
+              <input type="text" class="input-block-level" ng-model="user.lname" placeholder="Last name">
+              <input type="text" class="input-block-level" ng-model="user.company" placeholder="Company" required>
+              <input type="email" class="input-block-level" ng-model="user.email" placeholder="Email address" required>
+              <div class="controls">
+                <label class="radio inline">
+                  <input type="radio" name="accountTypeOptions" ng-model="user.accountType" id="accountType1" ng-value="'startup'"> Startup
+                </label>
+                <label class="radio inline">
+                  <input type="radio" name="accountTypeOptions" ng-model="user.accountType" id="accountType2" ng-value="'enterprise'"> Enterprise
+                </label>
+              </div>
+              <div class="controls clearfix">
+                <button class="btn btn-large btn-primary pull-right" type="submit" ng-disabled="!registerForm.$valid">Sign up</button>
+              </div>
+              <p class="condition pull-right">
+                By creatng an account, you agree to Bridge‘s terms and privacy.
+              </p>
+            </form>
+          </div>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row-fluid">
+        <div class="span6 well">
+          <h2>Startup</h2>
+          <ul class="unstyled">
+            <li><i class="icon-thumbs-up"></i> Search for corporations that meet your company’s needs</li>
+            <li><i class="icon-thumbs-up"></i> Get direct access to enterprise customers and their interests</li>
+            <li><i class="icon-thumbs-up"></i> Get expert help to refine your pitch for the enterprise</li>
+          </ul>
+        </div>
+        <div class="span6 well">
+          <h2>Enterprise</h2>
+          <ul class="unstyled">
+            <li><i class="icon-thumbs-up"></i> Search for startups that meet your company’s needs</li>
+            <li><i class="icon-thumbs-up"></i> Connect directly with startups that fit your interest</li>
+            <li><i class="icon-thumbs-up"></i> Get expert insight from Deloitte practitioners</li>
+          </ul>
+       </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2013 Bridge. All rights reserved.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+
+        <!-- build:js scripts/modules.js -->
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/home.js -->
+        <script src="scripts/home.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/registration.js"></script>
+        <script src="scripts/services/authenticationService.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

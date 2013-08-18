@@ -1,0 +1,13 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+@import 'sass-bootstrap/lib/bootstrap';
+@import 'sass-bootstrap/lib/responsive';
+
+.form-signup{
+  margin-bottom: 0px;
+  .condition{
+    font-size: 62%;
+    color: #ccc;
+  }
+}
