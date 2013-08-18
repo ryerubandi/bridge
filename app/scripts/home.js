@@ -1,3 +1,3 @@
 'use strict';
 
-var app = angular.module('bridgeApp', []);
+angular.module('bridgeApp', []);

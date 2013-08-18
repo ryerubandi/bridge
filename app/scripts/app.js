@@ -1,6 +1,7 @@
 'use strict';
 
-app.config(function($routeProvider) {
+angular.module('bridgeApp', [])
+.config(function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'views/main.html',
