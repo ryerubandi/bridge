@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('bridgeApp', [])
+angular.module('bridgeApp')
 .config(function($routeProvider) {
   $routeProvider
     .when('/', {
